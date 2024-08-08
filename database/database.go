@@ -30,7 +30,7 @@ func ConnectDB() {
 }
 
 func OpenCollection(collectionName string) *mongo.Collection {
-	collection := Client.Database(os.Getenv("auth")).Collection(collectionName)
+	collection := Client.Database(os.Getenv("DB_NAME")).Collection(collectionName)
 
 	return collection
 }

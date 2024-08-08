@@ -7,7 +7,7 @@ import (
 )
 
 func UserRouter(app *gin.Engine) {
-	app.Use(middlewares.Authenticate)
+	app.Use(middlewares.Authenticate())
+	app.GET("/user/:id", controllers.GetUser())
 	app.GET("/users", controllers.GetUsers)
-	app.GET("/users/:id", controllers.GetUser)
 }
